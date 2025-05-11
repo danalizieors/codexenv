@@ -1,12 +1,12 @@
 const importRoots = Object.values({
-    external: '(?!\/|@\/|\.\/|\.\.\/)',
-    public: '\/',
-    absolute: '@\/',
+    public: '/',
+    external: '^~.',
+    absolute: '~',
     relative: '.',
 })
 
-const styleImports = importRoots.map((root) => `^${root}.*\\.css$`)
-const scriptImports = importRoots.map((root) => `^${root}`)
+const styleImports = importRoots.map((root) => `^[${root}].*\\.css$`)
+const scriptImports = importRoots.map((root) => `^[${root}]`)
 
 const importOrder = [...styleImports, '', ...scriptImports]
 

@@ -1,8 +1,8 @@
 import './App.css'
 
-import { useState } from 'react'
 import viteLogo from '/logo.svg'
-import { cn } from '@/lib/utils'
+import { useState } from 'react'
+import { cn } from '~/library/utilities'
 import reactLogo from './assets/react.svg'
 
 function App() {
