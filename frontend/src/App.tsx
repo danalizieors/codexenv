@@ -1,8 +1,8 @@
 import './App.css'
 
-import viteLogo from '/logo.svg'
 import { useState } from 'react'
-import { tw } from '~/utilities/tw'
+import viteLogo from '/logo.svg'
+import { cn } from '@/lib/utils'
 import reactLogo from './assets/react.svg'
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
                 </a>
             </div>
             <h1>Vite + React</h1>
-            <div className={tw('card', 'bg-amber-900 text-3xl')}>
+            <div className={cn('card', 'bg-amber-900 text-3xl')}>
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
                 </button>

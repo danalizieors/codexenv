@@ -1,11 +1,12 @@
 const importRoots = Object.values({
-    external: '^~.',
-    absolute: '~',
+    external: '(?!\/|@\/|\.\/|\.\.\/)',
+    public: '\/',
+    absolute: '@\/',
     relative: '.',
 })
 
-const styleImports = importRoots.map((root) => `^[${root}].*\\.css$`)
-const scriptImports = importRoots.map((root) => `^[${root}]`)
+const styleImports = importRoots.map((root) => `^${root}.*\\.css$`)
+const scriptImports = importRoots.map((root) => `^${root}`)
 
 const importOrder = [...styleImports, '', ...scriptImports]
 
@@ -19,5 +20,5 @@ export default {
         'prettier-plugin-tailwindcss',
     ],
     importOrder,
-    tailwindFunctions: ['tw'],
+    tailwindFunctions: ['cn'],
 }
